@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
 
@@ -29,15 +29,15 @@ const MaterielPageTemplate = ({
       easing: 'ease-out'
     };
 
-    useEffect(()=>{
-      ScrollReveal().reveal(`.intro-p`, slideUp)
-      Object.keys(materiel).map((sectionName, index)=>{
-        for(let i = 0 ; i < materiel[sectionName].length ; i++) {
-          ScrollReveal().reveal(`.planeur-card-${index}`, {...slideUp, delay: 150*i, duration: 800})
-        }
-        return null
-      })
-    })
+    // useEffect(()=>{
+    //   ScrollReveal().reveal(`.intro-p`, slideUp)
+    //   Object.keys(materiel).map((sectionName, index)=>{
+    //     for(let i = 0 ; i < materiel[sectionName].length ; i++) {
+    //       ScrollReveal().reveal(`.planeur-card-${index}`, {...slideUp, delay: 150*i, duration: 800})
+    //     }
+    //     return null
+    //   })
+    // })
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', flexWrap: 'wrap' }}>

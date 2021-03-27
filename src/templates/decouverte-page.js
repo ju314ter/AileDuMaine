@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 
 
 import Layout from '../components/Layout'
@@ -26,10 +26,10 @@ const DecouvertePageTemplate = ({
         delay: 300
     };
 
-    useEffect(() => {
-        ScrollReveal().reveal(`.intro-p`, slideUp)
-        ScrollReveal().reveal(`.paragraphe`, slideUp)
-    })
+    // useEffect(() => {
+    //     ScrollReveal().reveal(`.intro-p`, slideUp)
+    //     ScrollReveal().reveal(`.paragraphe`, slideUp)
+    // })
 
 
     return (

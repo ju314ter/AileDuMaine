@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 
 import BackgroundImage from 'gatsby-background-image'
 
@@ -39,14 +39,14 @@ const slideLeft = {
     easing: 'ease-in'
 }
 
-useEffect(()=>{
-  ScrollReveal().reveal('.animate-title', {...slideUp, delay: 300, duration: 500})
-  ScrollReveal().reveal('.animate-subtitle', {...slideUp, delay: 500, duration: 1000})
-  ScrollReveal().reveal('.citation-wrapper', {...slideLeft, delay: 300, duration: 1000})
-  for(let i = 0 ; i < presentationItems.length ; i++) {
-    ScrollReveal().reveal(`.presentation-item-${i}`, {delay: 200*i, duration: 1000, easing:'ease-out'})
-  }
-})
+// useEffect(()=>{
+//   ScrollReveal().reveal('.animate-title', {...slideUp, delay: 300, duration: 500})
+//   ScrollReveal().reveal('.animate-subtitle', {...slideUp, delay: 500, duration: 1000})
+//   ScrollReveal().reveal('.citation-wrapper', {...slideLeft, delay: 300, duration: 1000})
+//   for(let i = 0 ; i < presentationItems.length ; i++) {
+//     ScrollReveal().reveal(`.presentation-item-${i}`, {delay: 200*i, duration: 1000, easing:'ease-out'})
+//   }
+// })
 
   return (
     <div>
