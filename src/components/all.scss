@@ -2,16 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500&display=swap");
 // @import "~bulma/sass/utilities/initial-variables"
 
-// @webkit-keyframes animate {
-//   0% {
-//   transform: translateX(-100vw);
-//   -webkittransform: translateX(-100vw);
-//   }
-//   100% {
-//   transform: translateX(100vw);
-//   -webkit-transform: translateX(100vw);
-//   }
-// }
+@-webkit-keyframes animate {
+  0% {
+  transform: translateX(-100vw);
+  -webkittransform: translateX(-100vw);
+  }
+  100% {
+  transform: translateX(100vw);
+  -webkit-transform: translateX(100vw);
+  }
+}
 
 @keyframes animate {
   0% {
@@ -89,6 +89,24 @@ body {
 }
 
 // Config vars
+.contact-button {
+  cursor: pointer;
+  background: hsl(171, 100%, 29%);
+  color: white;
+  z-index: 50;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  bottom: 5vh;
+  right: 5vw;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+}
+
 .custom-navbar {
   z-index: 100;
   position: fixed;
@@ -120,6 +138,7 @@ body {
     font-size: 3.5rem;
     position: absolute;
     right: 15px;
+    cursor: pointer;
   }
 
   .menu-mobile {
@@ -436,30 +455,6 @@ body {
         color: white;
       }
     }
-  }
-}
-
-
-
-.section-contact {
-  min-height: 700px;
-  width: 100%;
-  display: flex;
-
-  .facebook-slideshow {
-    flex: 0 0 50%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .contact-block {
-    background: #00947e;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 50%;
-    max-width: 50%;
-    justify-content: center;
-    align-items: center;
   }
 }
 

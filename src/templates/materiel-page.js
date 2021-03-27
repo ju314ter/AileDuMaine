@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
 
@@ -21,6 +22,22 @@ const MaterielPageTemplate = ({
     materiel
 }) => {
 
+    const slideUp = {
+      distance: '150%',
+      origin: 'bottom',
+      opacity: 0,
+      easing: 'ease-out'
+    };
+
+    useEffect(()=>{
+      ScrollReveal().reveal(`.intro-p`, slideUp)
+      Object.keys(materiel).map((sectionName, index)=>{
+        for(let i = 0 ; i < materiel[sectionName].length ; i++) {
+          ScrollReveal().reveal(`.planeur-card-${index}`, {...slideUp, delay: 150*i, duration: 800})
+        }
+      })
+    })
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', flexWrap: 'wrap' }}>
             <BackgroundImage className="full-width-image landing"
@@ -40,11 +57,8 @@ const MaterielPageTemplate = ({
                 }}>
                 <h1>Comment fonctionne un planeur ?</h1>
                 {intro && intro.map((paragraphe, index) => {
-                    return <p className="intro-p" 
+                    return <p className={`intro-p`}
                                 key={index}
-                                data-sal="slide-up"
-                                data-sal-duration="1000"
-                                data-sal-easing="ease"
                                 style={{
                                     position:'relative',
                                     left: index % 2 === 0 ? '5%' : '-5%'
@@ -56,15 +70,11 @@ const MaterielPageTemplate = ({
                 {
                     materiel && Object.keys(materiel).map((sectionName, index)=>{
                         return (
-                        <div key={index} className="section">
+                        <div key={index} className={`section`}>
                             {
                                 materiel[sectionName] && materiel[sectionName].map((planeur, index)=>{
                                 return (
-                                  <div key={index}
-                                        data-sal="slide-up"
-                                        data-sal-delay={1*(index*150)}
-                                        data-sal-duration="800"
-                                        data-sal-easing="ease-out">
+                                  <div key={index} className={`planeur-card-${index}`}>
                                     <Card className='card'
                                             data-sal="slide-up"
                                             data-sal-duration="1000"

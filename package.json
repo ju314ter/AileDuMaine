@@ -50,7 +50,9 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-use-measure": "^2.0.4",
+    "sal.js": "^0.8.4",
     "sass": "^1.32.8",
+    "scrollreveal": "^4.0.9",
     "uuid": "^7.0.0"
   }
 }

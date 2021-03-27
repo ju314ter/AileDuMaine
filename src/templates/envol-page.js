@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
 
@@ -19,7 +20,17 @@ const EnvolPageTemplate = ({
     sections
     }) => {
 
+        
+    const slideUp = {
+        distance: '150%',
+        origin: 'bottom',
+        opacity: 0,
+        easing: 'ease',
+        delay: 300
+      };  
+
     useEffect(()=>{
+        ScrollReveal().reveal(`.intro-p`, slideUp)
     })
 
     return (
@@ -42,11 +53,7 @@ const EnvolPageTemplate = ({
             <h1>Comment prendre son envol ?</h1>
 
             {intro && intro.map((paragraphe, index) => {
-                    return <p className="intro-p" 
-                                key={index}
-                                data-sal="slide-up"
-                                data-sal-duration="1000"
-                                data-sal-easing="ease"
+                    return <p className="intro-p"
                                 style={{
                                     position:'relative',
                                     left: index % 2 === 0 ? '5%' : '-5%'
@@ -67,10 +74,7 @@ const EnvolPageTemplate = ({
                                         <div key={i} className="options-wrapper">
                                             <h2 style={{paddingLeft: 15}}>{options.titre}</h2>
                                             {options.paragraphes && options.paragraphes.map((paragraphe, i)=>{
-                                                return <p key={i}
-                                                data-sal="slide-up"
-                                                data-sal-duration="1000"
-                                                data-sal-easing="ease"
+                                                return <p key={i} className="animate-paragraphes"
                                                 >{paragraphe}</p>
                                             })}
                                         </div>

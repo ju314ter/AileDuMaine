@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import ScrollReveal from 'scrollreveal'
+
 
 import Layout from '../components/Layout'
 
@@ -16,7 +18,17 @@ const DecouvertePageTemplate = ({
     sections
 }) => {
 
-    useState(() => {
+    const slideUp = {
+        distance: '150%',
+        origin: 'bottom',
+        opacity: 0,
+        easing: 'ease',
+        delay: 300
+    };
+
+    useEffect(() => {
+        ScrollReveal().reveal(`.intro-p`, slideUp)
+        ScrollReveal().reveal(`.paragraphe`, slideUp)
     }, [])
 
 
@@ -41,9 +53,6 @@ const DecouvertePageTemplate = ({
                 {intro.map((paragraphe, index) => {
                     return <p className="intro-p" 
                                 key={index}
-                                data-sal="slide-up"
-                                data-sal-duration="1000"
-                                data-sal-easing="ease"
                                 style={{
                                     position:'relative',
                                     left: index % 2 === 0 ? '5%' : '-5%'
@@ -69,10 +78,7 @@ const DecouvertePageTemplate = ({
                                     <h1>{section.titre}</h1>
                                     {
                                         section && section.paragraphes.map((paragraphe, index) => {
-                                            return <p key={index}
-                                                        data-sal="slide-up"
-                                                        data-sal-duration="1000"
-                                                        data-sal-easing="ease"
+                                            return <p key={index} className="paragraphe"
                                                 >{paragraphe}</p>
                                         })
                                     }
@@ -95,10 +101,6 @@ DecouvertePageTemplate.propTypes = {
 const DecouvertePage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
-    useState(() => {
-        // console.log('frontmatter')
-        // console.log(frontmatter)
-    }, [])
     return (
         <Layout>
             <DecouvertePageTemplate

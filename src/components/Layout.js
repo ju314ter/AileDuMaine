@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import ContactButton from '../components/ContactButton'
+
 import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import sal from 'sal.js'
 
 import { useScrollPosition } from '../hooks/useScrollPosition'
 import useMeasure from 'react-use-measure'
@@ -72,6 +75,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
+      <ContactButton />
       <Navbar show={hideOnScroll} collapse={collapsedMenu}/>
       <div ref={refPage}>{children}</div>
       <Footer />

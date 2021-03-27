@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import ScrollReveal from 'scrollreveal'
 
 import BackgroundImage from 'gatsby-background-image'
 
@@ -24,8 +25,27 @@ const IndexPageTemplate = ({
   offreItems
 }) => {
 
+const slideUp = {
+    distance: '150%',
+    origin: 'bottom',
+    opacity: 0,
+    easing: 'ease'
+};
+
+const slideLeft = {
+    distance: '100%',
+    origin: 'left',
+    opacity: 0,
+    easing: 'ease-in'
+}
+
 useEffect(()=>{
-  console.log(citation.auteur)
+  ScrollReveal().reveal('.animate-title', {...slideUp, delay: 300, duration: 500})
+  ScrollReveal().reveal('.animate-subtitle', {...slideUp, delay: 500, duration: 1000})
+  ScrollReveal().reveal('.citation-wrapper', {...slideLeft, delay: 300, duration: 1000})
+  for(let i = 0 ; i < presentationItems.length ; i++) {
+    ScrollReveal().reveal(`.presentation-item-${i}`, {delay: 200*i, duration: 1000, easing:'ease-out'})
+  }
 })
 
   return (
@@ -64,26 +84,15 @@ useEffect(()=>{
           flexDirection: 'column',
         }}
       >
-        <h1 className="index-title has-text-weight-light"
-          data-sal="fade"
-          data-sal-delay="300"
-          data-sal-duration="500"
-          data-sal-easing="ease">
+        <h1 className="index-title has-text-weight-light animate-title">
           {title}
         </h1>
-        <h2 className="index-subtitle has-text-weight-light"
-          data-sal="slide-up"
-          data-sal-delay="500"
-          data-sal-duration="1000"
-          data-sal-easing="ease">
+        <h2 className="index-subtitle has-text-weight-light animate-subtitle">
           {subtitle}
         </h2>
       </div>
       <div className="index-citation">
-        <div className="citation-wrapper"
-          data-sal="slide-left"
-          data-sal-duration="1000"
-          data-sal-easing="ease">
+        <div className="citation-wrapper">
           <h2>"{citation.content}"</h2>
           <p>{citation.auteur}</p>
         </div>
@@ -91,11 +100,7 @@ useEffect(()=>{
       <section className="section-presentation">
         <div className="presentation-items-wrapper">
           {presentationItems && presentationItems.map((item, index) => (
-            <div key={item.titre} className="presentation-item"
-            data-sal="slide-up"
-            data-sal-delay={150*index}
-            data-sal-duration="1000"
-            data-sal-easing="ease-out">
+            <div key={item.titre} className={`presentation-item presentation-item-${index}`}>
               <Card className='mat-card'>
                 <CardActionArea>
                   <CardMedia
