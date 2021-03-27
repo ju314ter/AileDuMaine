@@ -35,6 +35,7 @@ const MaterielPageTemplate = ({
         for(let i = 0 ; i < materiel[sectionName].length ; i++) {
           ScrollReveal().reveal(`.planeur-card-${index}`, {...slideUp, delay: 150*i, duration: 800})
         }
+        return null
       })
     })
 

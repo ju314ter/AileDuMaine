@@ -7,7 +7,6 @@ import ContactButton from '../components/ContactButton'
 import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
-import sal from 'sal.js'
 
 import { useScrollPosition } from '../hooks/useScrollPosition'
 import useMeasure from 'react-use-measure'

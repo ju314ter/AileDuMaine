@@ -29,7 +29,7 @@ const DecouvertePageTemplate = ({
     useEffect(() => {
         ScrollReveal().reveal(`.intro-p`, slideUp)
         ScrollReveal().reveal(`.paragraphe`, slideUp)
-    }, [])
+    })
 
 
     return (
