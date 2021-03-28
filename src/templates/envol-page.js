@@ -54,6 +54,7 @@ const EnvolPageTemplate = ({
 
             {intro && intro.map((paragraphe, index) => {
                     return <p className="intro-p"
+                                key={index + "intro-p"}
                                 style={{
                                     position:'relative',
                                     left: index % 2 === 0 ? '5%' : '-5%'
@@ -64,7 +65,7 @@ const EnvolPageTemplate = ({
 
                 {sections && sections.map((section, i)=>{
                     return (
-                        <Accordion key={i}>
+                        <Accordion key={i + "-section"}>
                             <AccordionSummary className="accordion-section-title-wrapper" expandIcon={<ExpandMoreIcon />}>
                                 <h1 style={{color:"black"}}>{section.titre}</h1>
                             </AccordionSummary>
