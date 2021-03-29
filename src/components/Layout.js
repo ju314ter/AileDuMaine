@@ -34,7 +34,7 @@ const TemplateWrapper = ({ children }) => {
 
 
   return (
-    <div>
+    <div id="scrolling-container">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>

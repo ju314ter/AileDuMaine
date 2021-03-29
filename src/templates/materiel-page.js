@@ -81,6 +81,7 @@ const MaterielPageTemplate = ({
                                             data-sal-duration="1000"
                                             data-sal-easing="ease"
                                     >
+                                      <a href={planeur.hyperlink} style={{textDecoration: 'unset', color: 'unset'}}>
                                         <CardActionArea>
                                             <CardMedia
                                             component="img"
@@ -99,6 +100,7 @@ const MaterielPageTemplate = ({
                                                 <a href={planeur.hyperlink}>En apprendre plus</a>
                                             </Button>
                                         </CardActions>
+                                        </a>
                                     </Card>
                                   </div>
                                   )

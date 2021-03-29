@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react'
+import React, { useEffect , useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-// import ScrollReveal from 'scrollreveal'
 
 import BackgroundImage from 'gatsby-background-image'
-
 import Layout from '../components/Layout'
+import '../sass/index.sass'
 
+import { useTrail, a } from 'react-spring'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -14,6 +14,32 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby'
+
+
+function Trail({ open, children, ...props }) {
+  const items = React.Children.toArray(children)
+  const trail = useTrail(items.length, {
+    config: { mass: 10, tension: 2000, friction: 200 },
+    opacity: open ? 1 : 0,
+    x: open ? 0 : 20,
+    height: open ? 140 : 0,
+    from: { opacity: 0, x: 40, height: 0 },
+  })
+  return (
+    <div className="trails-main" {...props}>
+      <div>
+        {trail.map(({ x, height, ...rest }, index) => (
+          <a.div
+            key={items[index]}
+            className="trails-text"
+            style={{ ...rest, transform: x.interpolate((x) => `translate3d(0,${x}px,0)`) }}>
+            <a.div style={{ height }} key={index}>{items[index]}</a.div>
+          </a.div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const IndexPageTemplate = ({
   image,
@@ -24,30 +50,7 @@ const IndexPageTemplate = ({
   presentationItems,
   offreItems
 }) => {
-
-const slideUp = {
-    distance: '150%',
-    origin: 'bottom',
-    opacity: 0,
-    easing: 'ease'
-};
-
-const slideLeft = {
-    distance: '100%',
-    origin: 'left',
-    opacity: 0,
-    easing: 'ease-in'
-}
-
-// useEffect(()=>{
-//   ScrollReveal().reveal('.animate-title', {...slideUp, delay: 300, duration: 500})
-//   ScrollReveal().reveal('.animate-subtitle', {...slideUp, delay: 500, duration: 1000})
-//   ScrollReveal().reveal('.citation-wrapper', {...slideLeft, delay: 300, duration: 1000})
-//   for(let i = 0 ; i < presentationItems.length ; i++) {
-//     ScrollReveal().reveal(`.presentation-item-${i}`, {delay: 200*i, duration: 1000, easing:'ease-out'})
-//   }
-// })
-
+  const [open, set] = useState(true)
   return (
     <div>
       <div
@@ -84,12 +87,10 @@ const slideLeft = {
           flexDirection: 'column',
         }}
       >
-        <h1 className="index-title has-text-weight-light animate-title">
-          {title}
-        </h1>
-        <h2 className="index-subtitle has-text-weight-light animate-subtitle">
-          {subtitle}
-        </h2>
+        <Trail open={open} onClick={() => set((state) => !state)}>
+          <h1 className="index-title">{title}</h1>
+          <h2 className="index-subtitle">{subtitle}</h2>
+        </Trail>
       </div>
       <div className="index-citation">
         <div className="citation-wrapper">
@@ -102,6 +103,7 @@ const slideLeft = {
           {presentationItems && presentationItems.map((item, index) => (
             <div key={item.titre} className={`presentation-item presentation-item-${index}`}>
               <Card className='mat-card'>
+                <Link to={item.link} style={{textDecoration: 'unset', color: 'unset'}}>
                 <CardActionArea>
                   <CardMedia
                     style={{ height: 200 }}
@@ -123,6 +125,7 @@ const slideLeft = {
                     <Link to={item.link} className="inner-link">En savoir plus !</Link>
                     </Button>
                 </CardActions>
+                </Link>
               </Card>
             </div>
           ))}
@@ -139,12 +142,12 @@ const slideLeft = {
         }}>
         {offreItems && offreItems.map((item, index) => (
           <div key={item.titre} className="offre-item"
-            style={{
-              backgroundImage: `url(${
-                !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : image
-                })`,
-              backgroundPosition: `center`
-            }}>
+          style={{
+            backgroundImage: `url(${
+              !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : image
+            })`,
+            backgroundPosition: `center`
+          }}>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -160,7 +163,6 @@ const slideLeft = {
               <Button className='btn-card'>
                 <Link to='/envol' className="inner-link">Se renseigner</Link>
               </Button>
-              
             </div>
           </div>
         ))}
