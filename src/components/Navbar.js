@@ -5,10 +5,12 @@ import logo from '../img/logo.svg'
 import Drawer from '@material-ui/core/Drawer';
 
 const Navbar = ({ show, collapse }) => {
+
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false)
   const toggleMenu = (open) => (event) => {
     setMobileMenuVisibility(open)
   }
+
   return (
     <nav
       className={`custom-navbar is-transparent ${show ? "" : "hidden-menu"}`}
