@@ -14,7 +14,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import DisappearOnClick from '../components/disappearOnClick'
+import DisappearOnClick from '../components/DisappearOnClick'
 
 const MaterielPageTemplate = ({
     intro,

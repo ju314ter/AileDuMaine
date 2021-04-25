@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import DisappearOnClick from '../components/disappearOnClick'
+import DisappearOnClick from '../components/DisappearOnClick'
 
 
 
