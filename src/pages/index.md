@@ -8,6 +8,15 @@ citation:
 image: /img/glider-index.jpeg
 backgroundOffres: /img/lemans.jpg
 presentationItems:
+  - titre: Le club
+    description: Une équipe de passionés bénévoles
+    link: /decouverte#club
+    image: '/img/hnagar.jpg'
+    bulletPoints:
+      - bulletpoint1
+      - bulletpoint2
+      - bulletpoint3
+      - bulletpoint4
   - titre: Le vol à voile
     description: Découvrez le principe unique du vol sans moteur
     link : /decouverte
@@ -16,15 +25,6 @@ presentationItems:
       - bulletpoint1 to change
       - bulletpoint2
       - bulletpoint3
-  - titre: Le club
-    description: Une équipe de passionés bénévoles
-    link: /decouverte#club
-    image: '/img/imgcard.jpg'
-    bulletPoints:
-      - bulletpoint1
-      - bulletpoint2
-      - bulletpoint3
-      - bulletpoint4
   - titre: Le matériel
     link: /materiel
     description: Découvrez notre flotte
