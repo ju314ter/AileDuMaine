@@ -27,9 +27,10 @@ const FaqPageTemplate = ({
                     </AccordionSummary>
                     <AccordionDetails className="accordion-reponse">
                         <div 
-                            data-sal="slide-up"
-                            data-sal-duration="1000"
-                            data-sal-easing="ease">
+                            // data-sal="slide-up"
+                            // data-sal-duration="1000"
+                            // data-sal-easing="ease"
+                            >
                             {question.reponse}
                         </div>
                     </AccordionDetails>

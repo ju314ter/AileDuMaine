@@ -11,6 +11,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DisappearOnClick from '../components/disappearOnClick'
 
 import '../sass/envol.sass'
 
@@ -45,21 +46,24 @@ const EnvolPageTemplate = ({
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'start',
                 alignItems: 'center',
-                minHeight: '100vh',
+                minHeight: '20vh',
                 boxShadow: 'inset 0px -8px 22px -10px rgba(255,255,255,1)'
             }}>
             <h1>Comment prendre son envol ?</h1>
 
             {intro && intro.map((paragraphe, index) => {
-                    return <p className="intro-p"
-                                key={index + "intro-p"}
-                                style={{
-                                    position:'relative',
-                                    left: index % 2 === 0 ? '5%' : '-5%'
-                                }}>
-                        {paragraphe}</p>
+                    return (
+                    <DisappearOnClick key={index} index={index}>
+                        <p className="intro-p"
+                                    style={{
+                                        position:'relative',
+                                        left: index % 2 === 0 ? '5%' : '-5%'
+                                    }}>
+                            {paragraphe}</p>
+                    </DisappearOnClick>
+                    )
                 })}
             <div>
 

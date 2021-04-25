@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-// import ScrollReveal from 'scrollreveal'
+import DisappearOnClick from '../components/disappearOnClick'
+
 
 
 import Layout from '../components/Layout'
@@ -9,8 +10,6 @@ import Layout from '../components/Layout'
 import BackgroundImage from 'gatsby-background-image'
 
 import '../sass/decouverte.sass'
-
-// import ImageDecouverte from '../img/decouverte.jpg'
 
 const DecouvertePageTemplate = ({
     intro,
@@ -44,20 +43,23 @@ const DecouvertePageTemplate = ({
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
+                    justifyContent: 'start',
                     alignItems: 'center',
-                    minHeight: '100vh',
+                    minHeight: '20vh',
                     boxShadow: 'inset 0px -8px 22px -10px rgba(255,255,255,1)'
                 }}>
                 <h1>Le vol à voile kesako ?</h1>
                 {intro.map((paragraphe, index) => {
-                    return <p className="intro-p" 
-                                key={index}
-                                style={{
-                                    position:'relative',
-                                    left: index % 2 === 0 ? '5%' : '-5%'
-                                }}>
-                        {paragraphe}</p>
+                    return (
+                        <DisappearOnClick key={index} index={index}>
+                            <p className="intro-p"
+                                    style={{
+                                        position:'relative',
+                                        left: index % 2 === 0 ? '5%' : '-5%'
+                                    }}>
+                            {paragraphe}</p>
+                        </DisappearOnClick>
+                    )
                 })}
             </BackgroundImage>
             <div className="decouverte-main">

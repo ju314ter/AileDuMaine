@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-3'
-import { useSpring, useTransition, animated } from "react-spring";
 import useMeasure from 'react-use-measure'
 
-import SpringSlider from '../components/SpringSlider'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -61,9 +59,12 @@ const ModalFacebookPage = () => {
                 { facebookData && facebookData.map((post, index)=>{
                   return (
                   <a style={{color: 'black'}} href={post.permalink_url}>
-                    <Slide index={index} className="slide-carousel" style={{backgroundImage: `url(${post.full_picture})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                      <div className="slide-message">
+                    <Slide index={index} className="slide-carousel">
+                      {post.message ? <div className="slide-message">
                         {post.message}
+                      </div> : null }
+                      <div className="slide-content" style={{backgroundImage: `url(${post.full_picture})`}}>
+
                       </div>
                     </Slide>
                   </a>

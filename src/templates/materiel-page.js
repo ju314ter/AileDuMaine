@@ -1,7 +1,6 @@
 import React,{ useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-// import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
 
@@ -15,29 +14,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import DisappearOnClick from '../components/disappearOnClick'
 
 const MaterielPageTemplate = ({
     intro,
     illustration,
     materiel
 }) => {
-
-    const slideUp = {
-      distance: '150%',
-      origin: 'bottom',
-      opacity: 0,
-      easing: 'ease-out'
-    };
-
-    // useEffect(()=>{
-    //   ScrollReveal().reveal(`.intro-p`, slideUp)
-    //   Object.keys(materiel).map((sectionName, index)=>{
-    //     for(let i = 0 ; i < materiel[sectionName].length ; i++) {
-    //       ScrollReveal().reveal(`.planeur-card-${index}`, {...slideUp, delay: 150*i, duration: 800})
-    //     }
-    //     return null
-    //   })
-    // })
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', flexWrap: 'wrap' }}>
@@ -51,20 +34,23 @@ const MaterielPageTemplate = ({
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
+                    justifyContent: 'start',
                     alignItems: 'center',
-                    minHeight: '100vh',
+                    minHeight: '20vh',
                     boxShadow: 'inset 0px -8px 22px -10px rgba(255,255,255,1)'
                 }}>
                 <h1>Comment fonctionne un planeur ?</h1>
                 {intro && intro.map((paragraphe, index) => {
-                    return <p className={`intro-p`}
-                                key={index}
-                                style={{
-                                    position:'relative',
-                                    left: index % 2 === 0 ? '5%' : '-5%'
-                                }}>
-                        {paragraphe}</p>
+                    return (
+                    <DisappearOnClick key={index} index={index}>
+                      <p className={`intro-p`}
+                                  style={{
+                                      position:'relative',
+                                      left: index % 2 === 0 ? '5%' : '-5%'
+                                  }}>
+                          {paragraphe}</p>
+                    </DisappearOnClick>
+                    )
                 })}
             </BackgroundImage>
             <div className="materiel-main">
@@ -77,9 +63,6 @@ const MaterielPageTemplate = ({
                                 return (
                                   <div key={index} className={`planeur-card-${index}`}>
                                     <Card className='card'
-                                            data-sal="slide-up"
-                                            data-sal-duration="1000"
-                                            data-sal-easing="ease"
                                     >
                                       <a href={planeur.hyperlink} style={{textDecoration: 'unset', color: 'unset'}}>
                                         <CardActionArea>

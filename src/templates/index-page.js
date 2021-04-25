@@ -92,7 +92,8 @@ const IndexPageTemplate = ({
           <h2 className="index-subtitle">{subtitle}</h2>
         </Trail>
       </div>
-      <div className="index-citation">
+      <div className="index-citation"
+        >
         <div className="citation-wrapper">
           <h2>"{citation.content}"</h2>
           <p>{citation.auteur}</p>
@@ -113,7 +114,7 @@ const IndexPageTemplate = ({
                   <CardContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch', flexDirection: 'column', textAlign: 'center' }}>
                     <h2>{item.titre}</h2>
                     <div style={{ color: 'hsl(141, 53%, 31%)', fontWeight: 300 }}>{item.description}</div>
-                    <ul style={{paddingLeft: '0px'}}>
+                    <ul style={{paddingLeft: '0px', listStyleType: 'none'}}>
                       {item.bulletPoints.map((bulletpoint) => {
                         return <li key={bulletpoint}>{bulletpoint}</li>
                       })}
@@ -123,7 +124,7 @@ const IndexPageTemplate = ({
                 <CardActions style={{ display: 'flex', justifyContent: 'center' }}>
                   <Button size="small" color="primary" className="btn-card">
                     <Link to={item.link} className="inner-link">En savoir plus !</Link>
-                    </Button>
+                  </Button>
                 </CardActions>
                 </Link>
               </Card>

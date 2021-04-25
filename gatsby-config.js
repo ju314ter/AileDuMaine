@@ -17,6 +17,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
+    `gatsby-plugin-scroll-reveal`,
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
