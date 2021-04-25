@@ -31,9 +31,9 @@ sections :
             - Préparation du vol (mise en piste du planeur, briefing sécurité).
             - Deux vols de longue durée entrecoupés d'une pause souvent appréciée par les débutants. Si vous le souhaitez, vous pourrez accompagner le pilote aux commandes et découvrir ainsi les extraordinaires sensations offertes par le vol plané.
             - Retour au hangar et rangement du planeur.
-        - titre : Le stage 5 vols
+        - titre : Le stage 3 vols
           paragraphes :
-            - Nous vous proposons un stage de 5 vols en planeur avec un instructeur du club.
+            - Nous vous proposons un stage de 3 vols en planeur avec un instructeur du club.
             - Chaque vol est une leçon de pilotage qui vous permet d'acquérir en toute sécurité la maîtrise de la ligne droite, des mises en virage et des sorties de virage et le pilotage du planeur en virage stabilisé. Vous bénéficiez comme tous nos élèves d'un briefing explicatif avant la leçon et d'un débriefing à l'issue du vol.
             - Ce stage s'adresse à toutes les personnes réellement intéressées par une formation au Brevet de Pilote de Planeur et qui souhaitent découvrir l'activité avant de se lancer. Il vous suffit de disposer de 3 demi-journées pas obligatoirement consécutives, à des dates compatibles avec notre planning.
         - titre : En pratique
@@ -91,8 +91,8 @@ sections :
             - Le vol à voile est une discipline sportive animée par de multiples championnats régionaux, nationaux et internationaux. Le principe de ces épreuves qui se déroulent sur plusieurs jours est d'accomplir chaque jour un circuit précis en un minimum de temps. Les points de virage sont contrôlés par des enregistreurs GPS. Le vainqueur est celui qui a accompli la meilleure moyenne sur l'ensemble des circuits proposés. Certaines compétitions sont spécialement organisées pour des juniors ou pour des pilotes ayant encore une expérience modeste.
         - titre : L'instruction, la transmission d'une passion 
           paragraphes :
-            - La formation d'instructeur I.T.P (instructeur pilote de planeur) est ouverte aux pilotes ayant un minimum de 300 heures en Commandant de Bord après le Brevet. Elle comprend une formation théorique et une formation pratique. 
-            - La formation d'instructeur I.T.V. (instructeur vol à voile) est ouverte aux instructeurs ITP ayant acquis une très bonne expérience des vols sur la campagne et de l'instruction. Elle comprend également une formation théorique et pratique exclusivement délivrée au Centre National De Vol à Voile de St Auban (Drôme).
+            - La formation d'instructeur FI (Flight instructor) est ouverte aux pilotes ayant un minimum de 300 heures en Commandant de Bord après le Brevet. Elle comprend une formation théorique et une formation pratique. 
+            - La formation d'instructeur FI est ouverte aux instructeurs ITP ayant acquis une très bonne expérience des vols sur la campagne et de l'instruction. Elle comprend également une formation théorique et pratique exclusivement délivrée au Centre National De Vol à Voile de St Auban (Drôme).
             - Les instructeurs sont tenus d'assurer un minimum d'heures d'instruction et doivent obligatoirement participer à des stages d'actualisation tous les 3 ans. 
 
 
