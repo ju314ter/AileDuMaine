@@ -11,7 +11,7 @@ introduction:
 
     - Si la météo est favorable, le vol peut durer toute la journée, les bons pilotes font des circuits de plusieures centaines de kilomètres ...
 sections :
- titre : Notre club
+    - titre : Notre club
       id: club
       illustration : '/img/journeedecouverte.jpg'
       paragraphes :
