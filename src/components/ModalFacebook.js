@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
+import { navigate } from "gatsby"  
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-3'
 import useMeasure from 'react-use-measure'
 
@@ -80,9 +81,7 @@ const ModalFacebookPage = () => {
                 <div className="loading-wrapper">
                   <CircularProgress/>
                 </div>
-            ) : (
-              <p>Mauvaise ouverture de fenetre modale, <Link to='/'>retour à l'accueil ici</Link></p>
-            )}
+            ) : navigate('/')}
           </div>
         )}
       </ModalRoutingContext.Consumer>
