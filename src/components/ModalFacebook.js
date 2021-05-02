@@ -26,6 +26,7 @@ const ModalFacebookPage = () => {
   const [facebookData, setFacebookData] = useState([])
   const [refCallback, bounds] = useMeasure()
   const [isDataReady, setDataReady] = useState(false)
+  const [isModalCalled, setIsModalCalled] = useState(true)
   
   useEffect(()=>{
     getFacebookData().then((data)=>data.json()).then(({posts})=>{
@@ -38,11 +39,13 @@ const ModalFacebookPage = () => {
       setFacebookData(filteredData)
       setDataReady(true)
     })
+
+
   }, [])
 
   useEffect(()=>{
-    console.log(facebookData)
-  }, [facebookData])
+    if(!isModalCalled){navigate('/')}
+  }, [isModalCalled])
   
   return (
     <ModalRoutingContext.Consumer>
@@ -81,7 +84,7 @@ const ModalFacebookPage = () => {
                 <div className="loading-wrapper">
                   <CircularProgress/>
                 </div>
-            ) : navigate('/')}
+            ) : setIsModalCalled(false)}
           </div>
         )}
       </ModalRoutingContext.Consumer>
