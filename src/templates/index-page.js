@@ -141,8 +141,9 @@ const IndexPageTemplate = ({
           backgroundAttachment: `fixed`,
           backgroundSize: 'cover',
         }}>
+        <h2 className="offres-titre">Nos offres</h2>
         {offreItems && offreItems.map((item, index) => (
-          <div key={item.titre} className="offre-item"
+          <div key={item.titre} className="offres-item"
           style={{
             backgroundImage: `url(${
               !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : image

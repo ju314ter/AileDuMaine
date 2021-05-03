@@ -187,7 +187,7 @@
     }
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 }
@@ -198,22 +198,41 @@
   justify-content: space-evenly;
   width: 100%;
   background: #216259;
-  padding: 30px 0;
+  padding: 65px 0;
 
   @media screen and ( min-width: 1024px ) {
-    padding: 180px 0;
+    padding: 150px 0;
   }
 
-  .offre-item {
+  &:hover {
+    .offres-item {
+            filter: brightness(0.5) saturate(150%) contrast(190%);
+    }
+  }
+
+  .offres-titre {
+    width: 60%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 2px #106033;
+    font-weight: 600;
+    font-size: 3rem;
+    border: 2px solid white;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .offres-item {
     height: 300px;
     display: flex;
     flex: 0 0 40%;
     border-radius: 15px;
     margin: 15px 0;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    background-size: 120% 120%;
-    filter: brightness(0.7) saturate(150%) contrast(190%);
-    transition: transform 200ms linear, filter 2s linear, background-size 2s linear;
+    background-size: 110% 110%;
+    transition: transform 200ms linear, filter 1s linear, background-size 1.5s linear;
 
     @media screen and ( max-width: 768px ) {
       flex: 0 0 90%;
@@ -221,7 +240,6 @@
     
     &:hover {
       filter: brightness(1) saturate(100%) contrast(100%);
-      transform: scale(1.05);
       background-size: 100% 100%;
 
       .content-card {
