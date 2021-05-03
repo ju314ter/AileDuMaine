@@ -16,8 +16,9 @@ const TemplateWrapper = ({ children }) => {
 
   const [refPage, boundsClient] = useMeasure()
   const [collapsedMenu, setCollapsedMenu] = useState(false)
+
   useEffect(()=>{
-    boundsClient.width <= 850 ? setCollapsedMenu(true) : setCollapsedMenu(false)
+    boundsClient.width <= 760 ? setCollapsedMenu(true) : setCollapsedMenu(false)
   },[boundsClient.width, collapsedMenu])
 
   const [hideOnScroll, setHideOnScroll] = useState(true)
